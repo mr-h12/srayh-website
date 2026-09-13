@@ -1,0 +1,66 @@
+[
+  {
+    "id": "villa-spring-house",
+    "type": "villa",
+    "status": "sale",
+    "area": 260,
+    "bedrooms": 4,
+    "location": {"ar": "كمبوند سبرينج هاوس، كينج مريوط", "en": "Spring House Compound, King Mariout"},
+    "title": {"ar": "فيلا مستقلة 260 م² — سبرينج هاوس", "en": "Standalone Villa 260 m² — Spring House"},
+    "desc": {
+      "ar": "فيلا Stand alone مساحة 260 متر للبيع في كمبوند سبرينج هاوس كينج مريوط، بين كارفور العروبة ودوران المطار. 4 غرف نوم + استقبال + غرفة نانى، 2 باكية جراج، حديقة 60 متر، نصف تشطيب، استلام فوري، مرخصة. سعر مغري وتسهيلات.",
+      "en": "Standalone villa, 260 m², for sale in Spring House Compound, King Mariout — between Carrefour El Orouba and the Airport roundabout. 4 bedrooms + reception + nanny room, 2-car garage, 60 m² garden, semi-finished, immediate delivery, licensed. Attractive price with payment facilities."
+    },
+    "price": null,
+    "photos": ["p1.jpg", "p2.jpg"],
+    "source": "https://www.facebook.com/photo.php?fbid=1490361156469888"
+  },
+  {
+    "id": "central-gate-october",
+    "type": "apartment",
+    "status": "sale",
+    "area": 124,
+    "bedrooms": 3,
+    "location": {"ar": "سنترال جيت، قلب 6 أكتوبر", "en": "Central Gate, heart of 6th of October"},
+    "title": {"ar": "شقة 3 غرف 124 م² — سنترال جيت", "en": "3-Bedroom Apartment 124 m² — Central Gate"},
+    "desc": {
+      "ar": "في قلب 6 أكتوبر، امتلك شقتك بسعر الطرح الأول. 3 غرف / 124 متر. مقدم 260,000 جنيه وقسط شهري 19,000 جنيه.",
+      "en": "Own your apartment in the heart of 6th of October at launch price. 3 bedrooms / 124 m². Down payment EGP 260,000, monthly installment EGP 19,000."
+    },
+    "price": {"ar": "مقدم 260,000 ج.م · قسط 19,000 ج.م/شهر", "en": "EGP 260,000 down · EGP 19,000/month"},
+    "photos": ["p3.jpg"],
+    "source": "https://www.facebook.com/photo.php?fbid=1490334059805931"
+  },
+  {
+    "id": "apartment-modern-finish",
+    "type": "apartment",
+    "status": "sale",
+    "area": null,
+    "bedrooms": null,
+    "location": {"ar": "الإسكندرية", "en": "Alexandria"},
+    "title": {"ar": "شقة سكنية بتشطيب حديث", "en": "Apartment with Modern Finishing"},
+    "desc": {
+      "ar": "شقة سكنية بتشطيب حديث وتصميم عصري. التفاصيل الكاملة والسعر عند التواصل.",
+      "en": "Residential apartment with modern finishing and contemporary design. Full details and price on request."
+    },
+    "price": null,
+    "photos": ["p4.jpg", "p5.jpg", "p6.jpg"],
+    "source": "https://www.facebook.com/photo.php?fbid=1487779883394682"
+  },
+  {
+    "id": "sea-view-apartment",
+    "type": "apartment",
+    "status": "sale",
+    "area": null,
+    "bedrooms": null,
+    "location": {"ar": "الإسكندرية — إطلالة بحرية", "en": "Alexandria — Sea view"},
+    "title": {"ar": "شقة بإطلالة على البحر", "en": "Sea-View Apartment"},
+    "desc": {
+      "ar": "شقة بإطلالة مفتوحة على البحر في الإسكندرية. التفاصيل الكاملة والسعر عند التواصل.",
+      "en": "Apartment with an open sea view in Alexandria. Full details and price on request."
+    },
+    "price": null,
+    "photos": ["p7.jpg", "p8.jpg"],
+    "source": "https://www.facebook.com/photo.php?fbid=1487774663395204"
+  }
+]
