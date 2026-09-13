@@ -85,7 +85,7 @@ svg.i { width: 1.2em; height: 1.2em; vertical-align: -.25em; flex-shrink: 0; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform var(--ease), box-shadow var(--ease); }
 .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(11,43,92,.16); }
-.card-media { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--muted); }
+.card-media { position: relative; display: block; aspect-ratio: 4/3; overflow: hidden; background: var(--muted); font: inherit; color: inherit; }
 .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 400ms ease; }
 .card:hover .card-media img { transform: scale(1.05); }
 .badge { position: absolute; top: 1rem; inset-inline-start: 1rem; padding: .3rem .8rem; border-radius: 999px; font-size: .75rem; font-weight: 700; background: var(--grad); color: #fff; }
@@ -124,11 +124,58 @@ svg.i { width: 1.2em; height: 1.2em; vertical-align: -.25em; flex-shrink: 0; }
 @media (max-width: 800px) { .contact .container { grid-template-columns: 1fr; } }
 
 /* Footer */
-footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 2rem 0; font-size: .9rem; }
-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: center; }
-footer .social { display: flex; gap: 1rem; }
-footer .social a { opacity: .8; transition: opacity var(--ease); }
-footer .social a:hover { opacity: 1; }
+footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 2.5rem 0 6.5rem; font-size: .9rem; }
+footer .container { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
+
+/* Social pills — brand colors, big hit targets */
+.social { display: flex; flex-wrap: wrap; gap: .75rem; }
+.soc { display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: .6rem 1.25rem; border-radius: 999px; color: #fff; font-weight: 600; border: 1px solid rgba(255,255,255,.2); transition: transform var(--ease), box-shadow var(--ease), filter var(--ease); }
+.soc svg { width: 1.4em; height: 1.4em; }
+.soc:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 10px 24px rgba(0,0,0,.3); }
+.soc-fb { background: #1877f2; }
+.soc-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.soc-yt { background: #ff0000; }
+.contact .social { margin-top: .5rem; }
+
+/* Mobile menu */
+.menu-btn { display: none; background: none; border: 1px solid rgba(255,255,255,.35); color: #fff; border-radius: 10px; width: 44px; height: 44px; cursor: pointer; place-items: center; }
+.menu-btn svg { width: 24px; height: 24px; }
+@media (max-width: 720px) {
+  .menu-btn { display: grid; order: 3; }
+  .nav .container { flex-wrap: wrap; height: auto; padding-block: .75rem; }
+  .nav ul { display: none; flex-direction: column; width: 100%; order: 4; gap: 0; border-top: 1px solid rgba(255,255,255,.15); padding-top: .5rem; }
+  .nav ul.open { display: flex; }
+  .nav ul a { display: block; padding: .8rem .25rem; }
+}
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease, transform 600ms ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* Card gallery */
+.card-media { cursor: zoom-in; }
+.count { position: absolute; bottom: .75rem; inset-inline-end: .75rem; display: inline-flex; align-items: center; gap: .3rem; padding: .25rem .6rem; border-radius: 999px; background: rgba(7,28,61,.7); color: #fff; font-size: .75rem; backdrop-filter: blur(6px); }
+.count svg { width: 1em; height: 1em; }
+
+/* Lightbox */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100%; height: 100%; }
+.lightbox::backdrop { background: rgba(7,28,61,.92); backdrop-filter: blur(8px); }
+.lightbox figure { margin: 0; width: 100%; height: 100%; display: grid; place-items: center; grid-template-rows: 1fr auto; padding: 4rem 1rem 2rem; }
+.lightbox img { max-width: min(1200px, 100%); max-height: calc(100vh - 8rem); object-fit: contain; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+.lightbox figcaption { color: #fff; margin-top: 1rem; font-size: 1.05rem; text-align: center; }
+.lb-close, .lb-nav { position: fixed; z-index: 2; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #fff; cursor: pointer; display: grid; place-items: center; font-size: 2rem; line-height: 1; transition: background var(--ease); }
+.lb-close:hover, .lb-nav:hover { background: rgba(255,255,255,.28); }
+.lb-close { top: 1rem; inset-inline-end: 1rem; }
+.lb-nav { top: 50%; transform: translateY(-50%); }
+.lb-nav svg { width: 28px; height: 28px; }
+.lb-prev { left: 1rem; } .lb-next { right: 1rem; }
+[dir="rtl"] .lb-nav svg { transform: scaleX(-1); }
+
+/* Back to top */
+.to-top { position: fixed; bottom: 1.5rem; inset-inline-start: 1.5rem; z-index: 60; width: 48px; height: 48px; border-radius: 50%; background: var(--card); color: var(--primary); border: 1px solid var(--border); display: grid; place-items: center; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: opacity var(--ease), transform var(--ease); }
+.to-top.show { opacity: 1; pointer-events: auto; }
+.to-top:hover { transform: translateY(-3px); }
+.to-top svg { width: 22px; height: 22px; }
 
 /* Floating WhatsApp */
 .wa-float { position: fixed; bottom: 1.5rem; inset-inline-end: 1.5rem; z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: #25d366; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(37,211,102,.4); transition: transform var(--ease); }
@@ -138,5 +185,6 @@ footer .social a:hover { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
-  .card:hover, .btn:hover, .wa-float:hover { transform: none; }
+  .card:hover, .btn:hover, .wa-float:hover, .soc:hover, .to-top:hover { transform: none; }
+  .reveal { opacity: 1; transform: none; }
 }
