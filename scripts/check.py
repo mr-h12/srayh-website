@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Sanity check: every listing has bilingual title/desc/location and photos that exist on disk."""
 import json, os
-root = os.path.dirname(os.path.abspath(__file__))
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 rows = json.load(open(os.path.join(root, 'data/listings.json'), encoding='utf-8'))
 ids = set()
 for l in rows:
